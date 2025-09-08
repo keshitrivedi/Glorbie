@@ -14,7 +14,7 @@ public class Glass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Shards.transform.rotation = Orientation.rotation;
+        // Shards.transform.rotation = Orientation.rotation;
         if (Input.GetKeyDown(KeyCode.G))
         {
             isActive = !isActive;
