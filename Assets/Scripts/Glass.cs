@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Glass : MonoBehaviour
 {
-    private bool isActive;
+    private bool isGlassActive;
     public GameObject Shards;
+    public GameObject BlurPane;
     public Transform Orientation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        isActive = true;
+        isGlassActive = true;
+
     }
 
     // Update is called once per frame
@@ -17,8 +19,9 @@ public class Glass : MonoBehaviour
         // Shards.transform.rotation = Orientation.rotation;
         if (Input.GetKeyDown(KeyCode.G))
         {
-            isActive = !isActive;
-            Shards.SetActive(isActive);
+            isGlassActive = !isGlassActive;
+            Shards.SetActive(isGlassActive);
+            BlurPane.SetActive(!isGlassActive);
         }
     }
 }

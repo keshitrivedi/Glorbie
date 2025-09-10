@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shards: {fileID: 1315200370}
+  BlurPane: {fileID: 1424869581}
   Orientation: {fileID: 1319681196}
 --- !u!4 &376095625
 Transform:
