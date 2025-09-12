@@ -12,6 +12,7 @@ public class StallLightningManager : MonoBehaviour
     public GameObject Lights;
     private MeshRenderer lightMesh;
     private Material lightMaterial;
+    public GameObject Player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,7 +35,7 @@ public class StallLightningManager : MonoBehaviour
             batteryCollider.enabled = false;
         }
 
-        if (batteryScript.isCollected && Math.Sqrt(Math.Pow(Battery.transform.position.x - Lights.transform.position.x, 2) + Math.Pow(Battery.transform.position.z - Lights.transform.position.z, 2)) < 10f)
+        if (batteryScript.isCollected && Math.Sqrt(Math.Pow(Player.transform.position.x - Lights.transform.position.x, 2) + Math.Pow(Player.transform.position.z - Lights.transform.position.z, 2)) < 2f)
         {
             Debug.Log("light");
             lightMaterial.EnableKeyword("_EMISSION");

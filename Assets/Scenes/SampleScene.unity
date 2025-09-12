@@ -749,6 +749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Battery: {fileID: 852586213}
   Lights: {fileID: 1381419557}
+  Player: {fileID: 1343966899}
 --- !u!1 &1315200370 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c9e0714af114d164c832b178592dadc3, type: 3}
