@@ -9,10 +9,22 @@ public class Battery : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter(Collider other)
+    // public void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.tag == "Player")
+    //     {
+    //         isCollected = true;
+    //         Debug.Log("Collected");   
+    //     }
+    // }
+
+    public void OnCollisionEnter(Collision collision)
     {
-        isCollected = true;
-        Debug.Log("Collected");
+        if (collision.gameObject.tag == "Player")
+        {
+            isCollected = true;
+            Debug.Log("Collected");  
+        }
     }
     // public void OnTriggerExit(Collider other)
     // {
