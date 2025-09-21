@@ -6,6 +6,11 @@ public class phonwa : MonoBehaviour
     public TextMeshProUGUI promptText;
     private bool isPhoneCollected = false;
 
+    public bool IsPhoneCollected()
+    {
+        return isPhoneCollected;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,8 +22,9 @@ public class phonwa : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Phone ayy");
-            isPhoneCollected = true;
             promptText.text = "Here it is...";
+            isPhoneCollected = true;
+            // gameObject.SetActive(false);
         }
     }
 
