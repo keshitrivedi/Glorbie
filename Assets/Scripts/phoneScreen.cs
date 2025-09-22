@@ -16,6 +16,8 @@ public class phoneScreen : MonoBehaviour
     public Texture2D phonePhotoTex;
     public Texture2D phoneDeadTex;
 
+    public BoxCollider RastaCollider;
+
     private bool openPhoto = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,6 +52,8 @@ public class phoneScreen : MonoBehaviour
 
             openPhoto = false;
             gameObject.SetActive(false);
+
+            RastaCollider.enabled = false;
         }
     }
 
