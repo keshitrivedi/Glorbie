@@ -27,27 +27,29 @@ public class phoneScreen : MonoBehaviour
 
     private IEnumerator phoneScreenNav()
     {
-        if (PhoneObjScript.IsPhoneCollected())
+        
+        PhoneObj.SetActive(false);
+        Debug.Log("Accessible Hello");
+        phoneImg.color = new Color32(255, 255, 255, 255);
+        phoneImg.texture = phoneHomeTex;
+        yield return new WaitForSeconds(2);
+
+        promptText.text = "Press P to access photos";
+
+        yield return new WaitUntil(() => openPhoto);
+        if (openPhoto)
         {
-            Debug.Log("Accessible Hello");
-            phoneImg.texture = phoneHomeTex;
+            phoneImg.texture = phonePhotoTex;
+
+            yield return new WaitForSeconds(3);
+            phoneImg.texture = phoneDeadTex;
+
+
             yield return new WaitForSeconds(2);
+            promptText.text = "Ah shit...";
 
-            promptText.text = "Press P to access photos";
-            if (openPhoto)
-            {
-                phoneImg.texture = phonePhotoTex;
-
-                yield return new WaitForSeconds(3);
-
-                openPhoto = false;
-                phoneImg.texture = phoneDeadTex;
-
-                yield return new WaitForSeconds(2);
-                promptText.text = "Ah shit...";
-
-                PhoneObj.SetActive(false);
-            }
+            openPhoto = false;
+            gameObject.SetActive(false);
         }
     }
 
@@ -61,6 +63,7 @@ public class phoneScreen : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P) && PhoneObjScript.IsPhoneCollected())
         {
+            Debug.Log("P pressed");
             openPhoto = true;
         }
     }
