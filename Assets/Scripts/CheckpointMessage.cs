@@ -2,19 +2,20 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheckpointMessage : MonoBehaviour
 {
     public TextMeshProUGUI promptText;
-    public String message;
+    public string message;
     private bool inRegion = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(customMessage());
+        // StartCoroutine(CustomMessage());
     }
 
-    private IEnumerator customMessage()
+    private IEnumerator CustomMessage()
     {
         if (inRegion)
         {
@@ -30,10 +31,12 @@ public class CheckpointMessage : MonoBehaviour
         Debug.Log("Recorded");
         // promptText.text = message;
         inRegion = true;
+        StartCoroutine(CustomMessage());
     }
 
     void OnTriggerExit(Collider other)
     {
+        Debug.Log("Exited");
         inRegion = false;
     }
 
