@@ -37,7 +37,7 @@ public class StallLightningManager : MonoBehaviour
             batteryCollider.enabled = false;
         }
 
-        if (batteryScript.isCollected && Math.Sqrt(Math.Pow(Player.transform.position.x - Lights.transform.position.x, 2) + Math.Pow(Player.transform.position.z - Lights.transform.position.z, 2)) < 2f)
+        if (batteryScript.isCollected && Math.Sqrt(Math.Pow(Player.transform.position.x - Lights.transform.position.x, 2) + Math.Pow(Player.transform.position.z - Lights.transform.position.z, 2)) < 5f)
         {
             Debug.Log("light");
             lightMaterial.EnableKeyword("_EMISSION");
