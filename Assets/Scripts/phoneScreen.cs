@@ -12,8 +12,8 @@ public class phoneScreen : MonoBehaviour
     public TextMeshProUGUI promptText;
 
     // Guy
-    public Image guyImg;
-    public Sprite[] guyFrames = new Sprite[2];
+    // public Image guyImg;
+    // public Sprite[] guyFrames = new Sprite[2];
 
     // phonetex
     public Texture2D phoneHomeTex;
@@ -30,9 +30,9 @@ public class phoneScreen : MonoBehaviour
 
     // toggle anim
 
-    private int index = 0;
-    private float timer = 0;
-    public float duration;
+    // private int index = 0;
+    // private float timer = 0;
+    // public float duration;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -69,6 +69,7 @@ public class phoneScreen : MonoBehaviour
 
             yield return new WaitForSeconds(1);
             // guyImg.color = noOpacity;
+            promptText.text = "...";
 
             // wait for a few seconds before sending john to the void
 
@@ -93,12 +94,12 @@ public class phoneScreen : MonoBehaviour
             openPhoto = true;
         }
 
-        if ((timer += Time.deltaTime) >= (duration / guyFrames.Length))
-        {
-            timer = 0;
-            guyImg.sprite = guyFrames[index];
-            index = (index + 1) % guyFrames.Length;
-        }
+        // if ((timer += Time.deltaTime) >= (duration / guyFrames.Length))
+        // {
+        //     timer = 0;
+        //     guyImg.sprite = guyFrames[index];
+        //     index = (index + 1) % guyFrames.Length;
+        // }
     }
 
 }
