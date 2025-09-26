@@ -67,9 +67,9 @@ public class phoneScreen : MonoBehaviour
             yield return new WaitForSeconds(2);
             promptText.text = "Ah shit...";
 
-            yield return new WaitForSeconds(1);
+            // yield return new WaitForSeconds(1);
             // guyImg.color = noOpacity;
-            promptText.text = "I must find my phone";
+            // promptText.text = "I must find my phone";
 
             // wait for a few seconds before sending john to the void
 
