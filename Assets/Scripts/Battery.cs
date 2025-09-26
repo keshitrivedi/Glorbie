@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class Battery : MonoBehaviour
 {
     public bool isCollected = false;
+    public TextMeshProUGUI promptText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +25,8 @@ public class Battery : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             isCollected = true;
-            Debug.Log("Collected");  
+            Debug.Log("Collected");
+            promptText.text = "Battery Collected!";
         }
     }
     // public void OnTriggerExit(Collider other)

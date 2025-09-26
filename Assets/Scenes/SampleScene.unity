@@ -8627,6 +8627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCollected: 0
+  promptText: {fileID: 0}
 --- !u!1001 &863733184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8962,6 +8963,7 @@ MonoBehaviour:
   Battery: {fileID: 1601246971}
   Lights: {fileID: 289183874}
   Player: {fileID: 1343966899}
+  promptText: {fileID: 337443972}
 --- !u!1 &880348270
 GameObject:
   m_ObjectHideFlags: 0
@@ -21918,6 +21920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCollected: 0
+  promptText: {fileID: 337443972}
 --- !u!54 &1601246976
 Rigidbody:
   m_ObjectHideFlags: 0

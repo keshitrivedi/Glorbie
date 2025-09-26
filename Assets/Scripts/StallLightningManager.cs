@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,8 @@ public class StallLightningManager : MonoBehaviour
     private MeshRenderer lightMesh;
     private Material lightMaterial;
     public GameObject Player;
+
+    public TextMeshProUGUI promptText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,6 +45,12 @@ public class StallLightningManager : MonoBehaviour
             Debug.Log("light");
             lightMaterial.EnableKeyword("_EMISSION");
             lightMaterial.SetColor("_EmissionColor", Color.yellow * 100f);
+            promptText.text = "Finally!";
+        }
+
+        if ((Math.Sqrt(Math.Pow(Player.transform.position.x - Lights.transform.position.x, 2) + Math.Pow(Player.transform.position.z - Lights.transform.position.z, 2)) < 10f) && batteryScript.isCollected == false)
+        {
+            promptText.text = "I must find the battery to light up the stall";
         }
         // else
         // {
