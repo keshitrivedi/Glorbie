@@ -10,6 +10,7 @@ public class Glass : MonoBehaviour
     void Start()
     {
         isGlassActive = true;
+        BlurPane.SetActive(false);
 
     }
 
