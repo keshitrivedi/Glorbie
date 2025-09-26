@@ -32,8 +32,8 @@ public class gameUIText : MonoBehaviour
 
         promptText.text = "Ah shit";
         yield return new WaitForSeconds(2);
-        
-        promptText.text = "...";
+
+        promptText.text = "I must find my phone";
     }
 
     // Update is called once per frame
